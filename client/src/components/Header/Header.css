@@ -1,0 +1,35 @@
+.Header {
+	height: calc(var(--header-h) * 0.5);
+	background-color: var(--success);
+	color: var(--light);
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	z-index: 999;
+}
+
+.Header__Container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	height: 100%;
+}
+
+.Header__Container > * {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.Header__SokoText {
+	display: flex;
+	align-items: center;
+}
+
+.Header__BagIcon {
+	font-size: calc(var(--font-size) * 0.8) !important;
+}

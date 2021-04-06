@@ -1,0 +1,38 @@
+.CollapsibleCard__Toggler {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+	border: none;
+	padding: 0.8rem;
+	background-color: transparent;
+
+	text-align: left;
+	font-size: var(--navlink-font-size);
+	padding-left: 1rem;
+	text-transform: uppercase;
+	color: var(--light);
+	font-style: normal;
+}
+
+.CollapsibleCard__Toggler:hover {
+	cursor: pointer;
+}
+
+.CollapsibleCard__Toggler:focus {
+	outline: none;
+}
+
+.Icon {
+	margin-left: 0.5rem;
+}
+
+.CollapsibleCard__Content {
+	transition: max-height var(--transition-speed);
+}
+
+.CollapsibleCard__Content--Collapse {
+	max-height: 0;
+	overflow: hidden;
+}

@@ -1,0 +1,8 @@
+
+.App__Main {
+	display: flex;
+	height: calc(100vh - var(--header-h));
+	/*background-color: var(--bg-light);*/
+	color: var(--light);
+	overflow: hidden;
+}

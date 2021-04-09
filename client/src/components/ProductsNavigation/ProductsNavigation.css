@@ -1,0 +1,55 @@
+.ProductsNavigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 9999;
+
+	background-color: var(--light);
+	min-width: 250px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	padding-bottom: 1.5rem;
+}
+
+.ProductsNavigation__Header {
+	background-color: var(--success);
+	color: var(--light);
+	padding: 0.8rem 1rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.CategoryLink {
+	display: block;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	text-transform: capitalize;
+	color: var(--grey);
+
+	display: flex;
+	justify-content: space-between;
+}
+
+.CategoryLink--Active {
+	color: var(--success);
+	background-color: var(--success-light);
+}
+
+.CategoryLink:hover {
+	background-color: var(--bg-light);
+}
+
+.CategoryLink span {
+	color: var(--light) !important;
+	padding: 0.1rem 0.2rem;
+	border-radius: 4px;
+	background-color: var(--success);
+}
+
+@media (min-width: 768px) {
+	.ProductsNavigation {
+		width: 300px;
+		position: relative;
+		z-index: 99;
+	}
+}

@@ -1,0 +1,23 @@
+.StoreFeed {
+	background-color: var(--light);
+	box-shadow: var(--light-shadow);
+}
+
+.StoreFeed__Heading {
+	padding: 1rem 0;
+	padding-left: 1rem;
+	text-transform: capitalize;
+	font-size: calc(var(--font-size) * 1.08);
+	color: var(--grey);
+
+	display: flex;
+	align-items: center;
+}
+
+.StoreFeed__ProductList {
+	list-style-type: none;
+}
+
+.StoreFeed__ProductList > *:not(:first-child) {
+	border-top: 2px solid var(--bg-light);
+}

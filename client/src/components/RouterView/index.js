@@ -9,7 +9,6 @@ import Products from '../../views/Products';
 import Categories from '../../views/Categories';
 import ProductDetails from '../../views/ProductDetails';
 
-
 // Inline router view styles
 const routerViewStyles = {
 	marginTop: 'calc(var(--header-h) * 0.5)',
@@ -17,17 +16,18 @@ const routerViewStyles = {
 }
 
 const Index = (props) => {
-  return (
-    <main className="RouterView" style={routerViewStyles}>
-    	<Switch>
-    		<Route path="/" exact component={Products}/>
-    		<Route path="/orders" component={Orders}/>
-    		<Route path="/profile" component={Profile}/>
-    		<Route path="/categories" component={Categories}/>
-    		<Route path="/products/:id" component={ProductDetails}/>
-    	</Switch>
-    </main>
-  )
+    return (
+        <main className="RouterView" style={routerViewStyles}>
+        	<Switch>
+        		<Route path="/" exact component={Products}/>
+        		<Route path="/cart" component={Cart}/>
+                <Route path="/orders" component={Orders}/>
+        		<Route path="/profile" component={Profile}/>
+        		<Route path="/categories" component={Categories}/>
+        		<Route path="/products/:id" component={ProductDetails}/>
+        	</Switch>
+        </main>
+    )
 }
 
 export default Index;

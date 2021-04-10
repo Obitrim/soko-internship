@@ -1,6 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { StoreContext } from '../../store';
 import MenuIcon from '@material-ui/icons/Menu';
+import TimerIcon from '@material-ui/icons/Timer';
+import SecurityIcon from '@material-ui/icons/Security';
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import './Products.css';
 
 // components
@@ -11,7 +14,7 @@ import ProductsNavigation from '../../components/ProductsNavigation';
 
 const Index = (props) => {
 	const [categoryFilter, setFilter] = useState("all");
-	const { store } = useContext(StoreContext);
+	const { store, dispatch } = useContext(StoreContext);
 	/**
 	 *
 	 * get number of products in a given category
@@ -53,34 +56,54 @@ const Index = (props) => {
 		return store.products.filter(product => product.category.toUpperCase() === categoryFilter.toUpperCase());
 	}
 
+	function toggleCategoriesNavigationBar(){
+		dispatch({ type: 'TOGGLE_NAVIGATION', show: !store.navOpen })
+	}
+
 	return (
 		<>
-	  	<div className="Store__Header">
-	  		<Container>
-	  			<button className="MenuToggler" type="button">
-	  				<MenuIcon/>
-	  			</button>
-	  			<div className="ShopDetails">
-	  				<p>Shop Name</p>
-	  				<a href="tel:+2330501654301" className="ShopDetails__PhoneNo">+233 50 165 4301</a>
-	  			</div>
-	  		</Container>
-	  	</div>
-	    <div className="Store__Main">
-	    	<Container>
-		    	<ProductsNavigation 
-		    		activeFilter={categoryFilter}
-		    		categories={getCategories()}
-		    		onCategoryChanged={filter => setFilter(filter)}
-		    	/>
-		    	<StoreFeed 
-		    		products={filteredProducts()} 
-		    		heading={categoryFilter}
-		    	/>
-		    	<CartPreviewBox/>
-	    	</Container>
-	    </div>
-	</>
+		  	<div className="Store__Header">
+		  		<Container>
+		  			<button className="MenuToggler" type="button" onClick={toggleCategoriesNavigationBar}>
+		  				<MenuIcon/>
+		  			</button>
+		  			<div className="ShopDetails">
+		  				<p className="ShopDetails__Name">Shop Name</p>
+		  				<a href="tel:+2330501654301" className="ShopDetails__PhoneNo">+233 50 165 4301</a>
+		  			</div>
+		  		</Container>
+		  	</div>
+		    <div className="Store__Main">
+		    	<Container>
+			    	<ProductsNavigation 
+			    		activeFilter={categoryFilter}
+			    		categories={getCategories()}
+			    		onCategoryChanged={filter => setFilter(filter)}
+			    	/>
+			    	<StoreFeed 
+			    		products={filteredProducts()} 
+			    		heading={categoryFilter}
+			    	/>
+			    	<CartPreviewBox/>
+		    	</Container>
+		    </div>
+		    <section className="Store__Services">
+				<Container className="Container">
+					<div className="Store__Service">
+						<LocalShippingIcon className="Icon"/>
+						<span>Fast Delivery</span>
+					</div>
+					<div className="Store__Service">
+						<SecurityIcon className="Icon"/>
+						<span>Buyer Protection</span>
+					</div>
+					<div className="Store__Service">
+						<TimerIcon className="Icon"/>
+						<span>Customer Support</span>
+					</div>
+				</Container>
+			</section>
+		</>
 	)
 }
 

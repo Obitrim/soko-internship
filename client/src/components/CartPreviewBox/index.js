@@ -17,9 +17,9 @@ const Index = (props) => {
 			{isEmptyCart()
 				? (
 					<div className="CartPreview__EmptyCart">
-						<h2>Oooops!!!</h2>
+						<h2>It's Empty here!!!</h2>
 						<DissatisfiedIcon className="DissatisfiedIcon"/>
-						<p>You have no item in your cart.</p>
+						<p>Start shopping to add items to your cart</p>
 					</div>
 				) : (
 					<ul>

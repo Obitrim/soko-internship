@@ -1,0 +1,60 @@
+.CartView {
+	padding: 2rem 0;
+}
+
+.CartView__Steps,
+.CartView__CartSummary {
+	background-color: var(--light);
+	border-radius: var(--b-radius);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+	padding: 1.5rem 1rem;
+}
+
+.CartView__Divider {
+	border: 1px solid var(--bg-light);
+	margin: 1.5rem 0;
+}
+
+.CartView__HelpInfo {
+	color: var(--grey);
+	font-size: calc(var(--font-size) * 0.8);
+	margin-top: 1.5rem;
+
+	display: flex;
+	align-items: flex-start;
+}
+
+.CartView__HelpInfo .Icon {
+	margin-right: 0.5rem;
+}
+
+.CartView__HelpInfo a {
+	text-decoration: none;
+	font-weight: 450;
+}
+
+.CartView__HelpInfo a:first-of-type {
+	color: var(--success);
+}
+
+.CartView__HelpInfo a:nth-of-type(2) {
+	color: var(--danger);
+}
+
+.CartView__Steps {
+	margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+	.CartView .Container {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	}
+
+	.CartView__Steps {
+		flex: 1;
+		margin-top: 0;
+		margin-right: 1.5rem;
+	}
+}

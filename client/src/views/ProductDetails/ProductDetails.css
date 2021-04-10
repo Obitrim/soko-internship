@@ -1,0 +1,147 @@
+.ProductDetails__Header {
+	background-color: var(--light);
+	height: calc(var(--header-h) * 0.4);
+	box-shadow: var(--light-shadow);
+
+	position: fixed;
+	top: calc(var(--header-h) * 0.5);
+	left: 0;
+	right: 0;
+}
+
+.ProductDetails__Header .Container  {
+	height: 100%;
+
+	display: flex;
+	align-items: center;
+}
+
+.BackBtn {
+	all: initial;
+	font-family: inherit;
+}
+
+.BackBtn:hover {
+	cursor: pointer;
+	background-color: var(--success-light);
+}
+
+.ProductDetails__Details {
+	padding: 1.5rem 0;
+}
+
+.ProductDetails__CategoryName {
+	text-transform: capitalize;
+	margin-left: 0.5rem;
+	font-weight: 600;
+}
+
+.ProductDetails__Content {
+	padding-top: calc(var(--header-h) * 0.4 + 1rem);
+}
+
+.ProductDetails__Row {
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+	background-color: var(--light);
+	padding: 1rem;
+}
+
+.ProductDetails__Row + .ProductDetails__Row  {
+	margin-top: 3rem;
+}
+
+.ProductDetails__ImgBox {
+	width: 100%;
+	min-height: 200px;
+}
+
+.ProductDetails__Details h1 {
+	color: var(--success);
+}
+
+.ProductDetails__Details p {
+	color: var(--grey);
+	line-height:  140%;
+	margin: 1rem 0;
+}
+
+.ProductDetails__Price {
+	display: inline-block;
+	padding: 0.3rem 1rem;
+	border-radius: 5px;
+	background-color: var(--danger);
+	color: var(--light);
+}
+
+.ProductDetails__Heading {
+	display: block;
+	color: initial;
+	margin-bottom: 0.5rem;
+}
+
+.BtnBar {
+	display: flex;
+	flex-direction: column;
+	margin-top: 3rem
+}
+
+.BtnBar__Btn {
+	all: initial;
+	font-family: inherit;
+
+	border: 1px solid var(--warning);
+	border-radius: 5px;
+	padding: 0.7rem 1.5rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: var(--transition-speed);
+}
+
+.BtnBar__Btn + .BtnBar__Btn {
+	margin-top: 0.8rem;
+}
+
+.BtnBar__Btn:first-child:hover,
+.BtnBar__Btn:nth-child(2) {
+	background-color: var(--warning);
+}
+
+.BtnBar__Btn:nth-child(2):hover {
+	background-color: transparent;
+}
+
+.BtnBar__Btn > *:first-child {
+	margin-right: 1rem !important;
+}
+
+.ProductDetails__Row--Service {
+	background-color: var(--success);
+	padding: 3rem 1.5rem;
+	color: var(--warning);
+}
+
+@media (min-width: 576px) {
+	.BtnBar {
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.BtnBar__Btn + .BtnBar__Btn {
+		margin-top: 0;
+		margin-left: 1.5rem;
+	}
+}
+
+@media (min-width: 768px) {
+	.ProductDetails__Content .ProductDetails__Row {
+		display: flex;
+	}
+
+	.ProductDetails__ImgBox {
+		width: 40%;
+		margin-right: 1.5rem;
+	}
+}

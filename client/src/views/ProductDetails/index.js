@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import { Favorite, AddShoppingCart } from '@material-ui/icons';
+import { Favorite } from '@material-ui/icons';
 
 import './ProductDetails.css';
 import { StoreContext } from '../../store';
 import Container from '../../components/Container';
+import CartButton from '../../components/CartButton';
+import StoreServices from '../../components/Services';
 import ProductCounter from '../../components/ProductCounter';
 
 const Index = (props) => {
@@ -42,10 +44,7 @@ const Index = (props) => {
 								<ProductCounter/>
 							</p>
 							<div className="BtnBar">
-								<button type="button" className="BtnBar__Btn">
-									<AddShoppingCart/>
-									Add to bag
-								</button>
+								<CartButton className="BtnBar__Btn"/>
 								<button type="button" className="BtnBar__Btn">
 									<Favorite/>
 									Add to Wishlist
@@ -53,11 +52,7 @@ const Index = (props) => {
 							</div>
 						</div>
 					</section>
-					<section className="ProductDetails__Row ProductDetails__Row--Service">
-						<div className="ProductDetails__Service">
-							
-						</div>
-					</section>
+					<StoreServices/>
 				</Container>
 			</div>
 		</>

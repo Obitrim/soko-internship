@@ -12,7 +12,7 @@ import ProductDetails from '../../views/ProductDetails';
 // Inline router view styles
 const routerViewStyles = {
 	marginTop: 'calc(var(--header-h) * 0.5)',
-	paddingBottom: 'calc(var(--header-h) * 0.5)'
+	paddingBottom: 'calc(var(--header-h) * 0.7)'
 }
 
 const Index = (props) => {

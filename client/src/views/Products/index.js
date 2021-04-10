@@ -1,14 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { StoreContext } from '../../store';
 import MenuIcon from '@material-ui/icons/Menu';
-import TimerIcon from '@material-ui/icons/Timer';
-import SecurityIcon from '@material-ui/icons/Security';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import './Products.css';
 
 // components
 import StoreFeed from '../../components/StoreFeed';
 import Container from '../../components/Container';
+import StoreServices from '../../components/Services';
 import CartPreviewBox from '../../components/CartPreviewBox';
 import ProductsNavigation from '../../components/ProductsNavigation';
 
@@ -87,22 +85,7 @@ const Index = (props) => {
 			    	<CartPreviewBox/>
 		    	</Container>
 		    </div>
-		    <section className="Store__Services">
-				<Container className="Container">
-					<div className="Store__Service">
-						<LocalShippingIcon className="Icon"/>
-						<span>Fast Delivery</span>
-					</div>
-					<div className="Store__Service">
-						<SecurityIcon className="Icon"/>
-						<span>Buyer Protection</span>
-					</div>
-					<div className="Store__Service">
-						<TimerIcon className="Icon"/>
-						<span>Customer Support</span>
-					</div>
-				</Container>
-			</section>
+		    <StoreServices/>
 		</>
 	)
 }

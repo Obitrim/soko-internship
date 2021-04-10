@@ -1,0 +1,30 @@
+.Store__Services {
+	margin-top: 3rem;
+	padding: 3rem 1.5rem;
+	background-color: var(--success);
+}
+
+.Store__Services .Container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+	grid-gap: 2rem;
+}
+
+.Store__Service {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1.5rem;
+}
+
+.Store__Service .Icon {
+	display: inline-block;
+	margin-bottom: 1rem;
+	font-size: calc(var(--font-size) * 5);
+	color: var(--warning) !important;
+}
+
+.Store__Service span {
+	color: var(--light);
+	font-weight: 600;
+}

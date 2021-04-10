@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import AddShoppingCart from "@material-ui/icons/AddShoppingCart";
+
+import CartButton from '../CartButton';
 
 import './ProductCard.css';
 
@@ -13,9 +14,7 @@ const Index = ({name, id, imgURL, price,...props}) => {
     		<Link  className="ProductCard__Name" to={`/products/${id}`} ><h2>{name}</h2></Link>
     		<div className="ProductCard__BottomRow">
                 <p className="ProductCard__Price">GH$ <span>{price}</span></p>
-                <button className="AddToCart" type="button">
-                    <AddShoppingCart/>
-                </button>      
+                <CartButton/>     
             </div>
     	</div>
     </div>

@@ -1,6 +1,6 @@
 .StoreFeed {
 	background-color: var(--light);
-	box-shadow: var(--light-shadow);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
 }
 
 .StoreFeed__Heading {

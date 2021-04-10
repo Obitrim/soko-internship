@@ -10,6 +10,9 @@
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
 	padding-bottom: 1.5rem;
 
+	border-radius: var(--b-radius);
+	overflow: hidden;
+
 	transition: left var(--transition-speed);
 }
 

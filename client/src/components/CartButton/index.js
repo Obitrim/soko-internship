@@ -5,8 +5,8 @@ import RemoveShoppingCartIcon from '@material-ui/icons/RemoveShoppingCart';
 
 import './CartButton.css';
 
-const Index = ({className, onAddToBag, onRemoveFromBag, ...props}) => {
-	const [checked, setChecked] = useState(false);
+const Index = ({className, onAddToBag, isChecked, onRemoveFromBag, ...props}) => {
+	const [checked, setChecked] = useState(isChecked);
 
 	function handleClick(evt){
 		setChecked(!checked);
@@ -34,11 +34,13 @@ const Index = ({className, onAddToBag, onRemoveFromBag, ...props}) => {
 Index.propTypes = {
 	className: PropTypes.string,
 	onAddToBag: PropTypes.func,
+	isChecked: PropTypes.bool,
 	onRemoveFromBag: PropTypes.func,
 }
 
 Index.defaultProps = {
 	className: '',
+	isChecked: false,
 	onAddToBag: () => alert('onAddToBag prop not provided'),
 	onRemoveFromBag: () => alert('onRemoveToBag prop not provided'),
 }

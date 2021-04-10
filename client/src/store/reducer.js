@@ -1,6 +1,6 @@
 const reducer =  (state, action) => {
 	switch (action.type) {
-		case 'TOGGLE_NAVBAR': 
+		case 'TOGGLE_NAVIGATION': 
 			return {
 				...state,
 				navOpen: action.show

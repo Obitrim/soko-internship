@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import ArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
-const Index = ({title, children}) => {
+const Index = ({title, children, wrapperClassName, ...props}) => {
 	const [isCollapsed, setIsCollapsed] = useState(true);
 
 	const toggleCollapsible = evt => {
@@ -13,17 +13,17 @@ const Index = ({title, children}) => {
 	}
 
 	return (
-		<>
+		<div className={wrapperClassName} {...props}>
+			<div className={`CollapsibleCard__Content ${isCollapsed && "CollapsibleCard__Content--Collapse"}`}>
+				{children}
+			</div>
 			<button type="button" className="CollapsibleCard__Toggler" onClick={toggleCollapsible}>
 				{ title }
 				{ isCollapsed 
 					? <ArrowDownIcon className="Icon"/>
 					: <ArrowUpIcon className="Icon"/> }
 			</button>
-			<div className={`CollapsibleCard__Content ${isCollapsed && "CollapsibleCard__Content--Collapse"}`}>
-				{children}
-			</div>
-		</>
+		</div>
 	)
 }
 

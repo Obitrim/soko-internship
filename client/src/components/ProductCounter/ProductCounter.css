@@ -1,0 +1,34 @@
+.ProductCounter {
+	display: grid;
+	grid-template-columns: 2rem 1fr 2rem;
+	place-items: center;
+
+	border: 1px solid var(--success);
+	border-radius: 5px;
+	overflow: hidden;
+	max-width: 150px;
+}
+
+.ProductCounter__Btn {
+	all: initial;
+	font-family: inherit;
+	background-color: var(--success-light);
+	color: var(--success);
+	transition: var(--transition-speed);
+}
+
+.ProductCounter__Btn:hover {
+	background-color: var(--success);
+	color: var(--light);
+}
+
+.ProductCounter__Btn:disabled {
+	background-color: var(--bg-light);
+	color: var(--grey);
+	cursor: not-allowed;
+}
+
+.ProductCounter span {
+	display: inline-block;
+	padding: 0.4rem 0.5rem;
+}

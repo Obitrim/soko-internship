@@ -44,7 +44,8 @@ const state = {
 			price: 83,
 			category: 'electronics'
 		}
-	]
+	],
+	cart: []
 };
 
 export default state;

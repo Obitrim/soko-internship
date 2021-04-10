@@ -1,14 +1,16 @@
 .ProductsNavigation {
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: -100%;
 	bottom: 0;
-	z-index: 9999;
+	z-index: 99999;
 
 	background-color: var(--light);
 	min-width: 250px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
 	padding-bottom: 1.5rem;
+
+	transition: left var(--transition-speed);
 }
 
 .ProductsNavigation__Header {
@@ -21,7 +23,7 @@
 
 .CategoryLink {
 	display: block;
-	padding: 0.5rem 1rem;
+	padding: 0.8rem 1rem;
 	text-decoration: none;
 	text-transform: capitalize;
 	color: var(--grey);
@@ -30,13 +32,10 @@
 	justify-content: space-between;
 }
 
+.CategoryLink:hover,
 .CategoryLink--Active {
 	color: var(--success);
 	background-color: var(--success-light);
-}
-
-.CategoryLink:hover {
-	background-color: var(--bg-light);
 }
 
 .CategoryLink span {
@@ -46,10 +45,16 @@
 	background-color: var(--success);
 }
 
+@media (max-width: 767px){
+	.ProductsNavigation--Show {
+		left: 0 !important;
+	}
+}
+
 @media (min-width: 768px) {
 	.ProductsNavigation {
 		width: 300px;
-		position: relative;
+		position: static;
 		z-index: 99;
 	}
 }

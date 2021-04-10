@@ -5,14 +5,15 @@
 
 	width: 100%;
 	border: none;
-	padding: 0.8rem;
-	background-color: transparent;
+	border-radius: var(--b-radius);
+	padding: 0.5rem 0.8rem;
+	background-color: var(--warning);
 
 	text-align: left;
 	font-size: var(--navlink-font-size);
 	padding-left: 1rem;
 	text-transform: uppercase;
-	color: var(--light);
+	color: initial;
 	font-style: normal;
 }
 

@@ -1,0 +1,32 @@
+.AddToBagButton {
+	all: initial;
+	font-family: inherit;
+	border: 1px solid var(--warning);
+	background-color: var(--warning);
+	color: initial;
+
+	padding: 0.3rem 0.5rem;
+	margin-top: 1rem;
+	border-radius: var(--b-radius);
+
+	display: flex;
+	align-items: center;
+}
+
+.AddToBagButton__Text {
+	display: inline-block;
+	margin-left: 0.5rem;
+}
+
+.AddToBagButton--Checked .AddToBagButton__Text {
+	font-size: calc(var(--font-size) * 0.9);
+}
+
+
+@media (min-width: 576px) {
+	.AddToBagButton:hover {
+		cursor: pointer;
+		background-color: var(--light);
+		color: var(--warning);
+	}
+}

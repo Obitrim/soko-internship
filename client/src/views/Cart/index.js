@@ -4,6 +4,7 @@ import HelpOutlined from '@material-ui/icons/HelpOutlined';
 import './Cart.css';
 import CartItem from '../../components/CartItem';
 import Container from '../../components/Container';
+import CollapsibleCard from '../../components/CollapsibleCard';
 import CheckoutTimeline from '../../components/CheckoutTimeline';
 
 const Index = (props) => {
@@ -14,9 +15,12 @@ const Index = (props) => {
 	    		<strong>Cart Summary</strong>
 	    		<CartItem/>
 	    		<CartItem/>
-	    		<CartItem/>
-	    		<CartItem/>
-	    		<CartItem/>
+	    		<CollapsibleCard title="More" style={{ marginTop: '1.5rem '}}>
+	    			<CartItem/>
+	    			<CartItem/>
+	    			<CartItem/>
+	    			<CartItem/>
+	    		</CollapsibleCard>
 	    		<hr className="CartView__Divider"/>
 	    		<p className="CartView__HelpInfo">
 	    			<HelpOutlined className="Icon"/>

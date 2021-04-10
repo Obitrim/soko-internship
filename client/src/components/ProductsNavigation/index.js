@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import PropTypes from 'prop-types';
+import { StoreContext } from '../../store';
 
 import './ProductsNavigation.css';
 
 const Index = ({onCategoryChanged, categories, activeFilter, ...props}) => {
+	const { store, dispatch } = useContext(StoreContext);
 
 	function changeFilter(filter){
 		return evt => {
 			evt.preventDefault();
+			dispatch({ type: 'TOGGLE_NAVIGATION', show: false })
 			onCategoryChanged(filter);
 		}
 	}
@@ -17,7 +20,7 @@ const Index = ({onCategoryChanged, categories, activeFilter, ...props}) => {
 	}
 
 	return (
-		<div className="ProductsNavigation" {...props}>
+		<div className={`ProductsNavigation ${store.navOpen && 'ProductsNavigation--Show'}`} {...props}>
 			<div className="ProductsNavigation__Header">Categories</div>
 			<a href="#" className={`CategoryLink ${isActiveFilter('ALL') && 'CategoryLink--Active'}`} 
 				onClick={changeFilter('all')} 

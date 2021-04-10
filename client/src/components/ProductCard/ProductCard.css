@@ -14,7 +14,7 @@
 .ProductCard__Name {
 	text-decoration: none;
 	color: var(--success);
-	font-size: calc(var(--font-size) * 0.8);
+	font-size: calc(var(--font-size) * 0.7);
 }
 
 .ProductCard__Name:hover {
@@ -22,11 +22,11 @@
 	background-color: var(--bg-light);
 }
 
-.ProductCard__BottomRow {
+/*.ProductCard__BottomRow {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-}
+}*/
 
 .ProductCard__Price {
 	margin-top: 0.4rem;
@@ -35,21 +35,6 @@
 
 .ProductCard__Price span {
 	font-size: calc(var(--font-size) * 1.5);
-}
-
-.AddToCart {
-	all: initial;
-	border: 1px solid var(--warning);
-	background-color: var(--warning);
-	color: initial;
-	padding: 0.3rem 0.5rem;
-	margin-top: 1rem;
-}
-
-.AddToCart:hover {
-	cursor: pointer;
-	background-color: var(--light);
-	color: var(--warning);
 }
 
 @media (min-width: 768px) {

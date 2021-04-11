@@ -1,0 +1,43 @@
+.CheckoutTimeline {
+	display: flex;
+	justify-content: space-between;
+
+	position: relative;
+	overflow: hidden;
+}
+
+.CheckoutTimeline__Step {
+	color: var(--success);
+	position: relative;
+	z-index: 99;
+
+	display: grid;
+	place-items: center;
+}
+
+.CheckoutTimeline__Step .Icon{
+	margin-left: 0 !important;
+}
+
+.CheckoutTimeline__Step span {
+	display: grid;
+	place-items: center;
+
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background-color: var(--bg-light);
+	color: var(--grey);
+}
+
+.CheckoutTimeline__Indicator {
+	position: absolute;
+	left: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+
+	height: 2px;
+	background-color: var(--success);
+	transition: width var(--transition-speed);
+	z-index: 9;
+}

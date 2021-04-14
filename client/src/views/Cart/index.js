@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import Swal from 'sweetalert';
 import HelpOutlined from '@material-ui/icons/HelpOutlined';
+import DissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 
 import './Cart.css';
+import { StoreContext } from '../../store';
 import CartItem from '../../components/CartItem';
 import Container from '../../components/Container';
 import LoginForm from '../../components/Forms/Login.js';
@@ -12,6 +14,7 @@ import DeliveryAddressForm from '../../components/Forms/DeliveryAddress.js';
 
 const Index = (props) => {
 	const [currentStep, setCurrentStep] = useState(1);
+	const { store } = useContext(StoreContext);
 
 	function getLoginData(data){
 		console.log(data);
@@ -24,11 +27,40 @@ const Index = (props) => {
 		setCurrentStep(3);
 	}
 
+	function isEmptyBag(){
+		return store.bag.length === 0;
+	}
+
 	let stepTemplate = null;
 	switch(currentStep){
 		case 1: stepTemplate = <LoginForm onSubmit={getLoginData}/>;break;
 		case 2: stepTemplate = <DeliveryAddressForm onSubmit={getDeliveryAddress}/>;break;
-		case 3: stepTemplate = <h1>Payment Details</h1>;break;
+		default: stepTemplate = <h1>Payment Details</h1>;break;
+	}
+
+	let bagItemsTemplate = null;
+	if (store.bag.length < 2) {
+		bagItemsTemplate = store.bag.slice(0, 2).map((product, index) => (
+			<CartItem 
+				name={product.name} 
+				quantity={product.quantity} 
+				price={product.price} 
+				imgURL={product.imgURL} 
+				key={product.name + index}
+			/>
+		));
+	} else {
+		bagItemsTemplate = <CollapsibleCard title="See All" style={{ marginTop: '1.5rem '}}>
+			{store.bag.slice(2).map((product, index) => (
+				<CartItem 
+					name={product.name} 
+					quantity={product.quantity} 
+					price={product.price} 
+					imgURL={product.imgURL} 
+					key={product.name + index}
+				/>
+			))}
+    	</CollapsibleCard>
 	}
 
 	return (
@@ -36,14 +68,16 @@ const Index = (props) => {
 			<Container className="Container">
 		    	<div className="CartView__CartSummary">
 		    		<strong>Cart Summary</strong>
-		    		<CartItem/>
-		    		<CartItem/>
-		    		<CollapsibleCard title="More" style={{ marginTop: '1.5rem '}}>
-		    			<CartItem/>
-		    			<CartItem/>
-		    			<CartItem/>
-		    			<CartItem/>
-		    		</CollapsibleCard>
+		    		{isEmptyBag()
+						? (
+							<div className="CartPreview__EmptyCart">
+								<h2>It's Empty here!!!</h2>
+								<DissatisfiedIcon className="DissatisfiedIcon"/>
+								<p>Start shopping to add items to your cart</p>
+							</div>
+						) : bagItemsTemplate
+					}
+		    		
 		    		<hr className="CartView__Divider"/>
 		    		<p className="CartView__HelpInfo">
 		    			<HelpOutlined className="Icon"/>

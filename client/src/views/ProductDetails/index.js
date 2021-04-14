@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { Favorite } from '@material-ui/icons';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import './ProductDetails.css';
 import { StoreContext } from '../../store';
@@ -13,8 +13,35 @@ import ProductCounter from '../../components/ProductCounter';
 const Index = (props) => {
 	const { id } = useParams();
 	const history = useHistory();
-	const { store } = useContext(StoreContext);
+	const [quantity, setQuantity] = useState(1);
+	const { store, dispatch } = useContext(StoreContext);
 	const product = store.products.find(product => product.id === id);
+	/**
+     *
+     * attempts to remove item from bag
+     * @returns {undefined}
+     */
+    function addToBag(){
+        // make request to save product
+        // updating UI on request success
+        dispatch({ type: 'ADD_TO_BAG', product: {
+            id: product.id, 
+            imgURL: product.imgURL, 
+            name: product.name, 
+            price: product.price, 
+            quantity
+        }});
+    }
+    /**
+     *
+     * attempts to add item to bag
+     * @returns {undefined}
+     */
+    function removeFromBag(){
+        // make request to remove saved products product
+        // updating UI on request success
+        dispatch({ type: 'REMOVE_FROM_BAG', id });
+    }
 
 	return (
 		<>
@@ -39,12 +66,15 @@ const Index = (props) => {
 								<strong className="ProductDetails__Heading">Price</strong>
 								<span className="ProductDetails__Price">GH$ {product.price}</span>
 							</p>
-							<p>
+							<div>
 								<strong className="ProductDetails__Heading">Quantity</strong>
-								<ProductCounter/>
-							</p>
+								<ProductCounter onCount={value => setQuantity(value)}/>
+							</div>
 							<div className="BtnBar">
-								<CartButton className="BtnBar__Btn"/>
+								<CartButton className="BtnBar__Btn"
+									onAddToBag={addToBag}
+									onRemoveFromBag={removeFromBag}
+								/>
 								<button type="button" className="BtnBar__Btn">
 									<Favorite/>
 									Add to Wishlist

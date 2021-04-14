@@ -45,7 +45,7 @@ const state = {
 			category: 'electronics'
 		}
 	],
-	cart: []
+	bag: []
 };
 
 export default state;

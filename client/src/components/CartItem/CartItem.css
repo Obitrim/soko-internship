@@ -1,8 +1,6 @@
-
-
 .CartItem {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	max-width: 270px;
 }
 
@@ -14,6 +12,7 @@
 .CartItem__ImgBox {
 	position: relative;
 	width: 40%;
+	min-width: 80px;
 
 	box-shadow: -5px 5px 20px var(--success-light);
 }
@@ -44,6 +43,10 @@
 
 .CartItem__Details {
 	margin-left: 1.5rem;
+}
+
+.CartItem__Details strong {
+	font-size: calc(var(--font-size) * 1.2);
 }
 
 .CartItem__Details__Price {

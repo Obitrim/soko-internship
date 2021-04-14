@@ -2,15 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserAccount from '@material-ui/icons/AccountCircle';
 
-const styles = {
-	textDecoration: 'none',
-	color: 'var(--light)'
-}
+import './ProfileBox.css';
 
 const Index = (props) => {
   return (
-    <Link style={styles} to="/profile">
+    <Link className="ProfileBox" to="/profile">
     	<UserAccount/>
+    	<span>Account</span>
     </Link>
   )
 }

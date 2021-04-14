@@ -7,11 +7,14 @@ import './CartButton.css';
 
 const Index = ({className, onAddToBag, isChecked, onRemoveFromBag, ...props}) => {
 	const [checked, setChecked] = useState(isChecked);
+	function isInCart(){
 
+	}
+	
 	function handleClick(evt){
 		setChecked(!checked);
 		// if bag is now checked, it means product was added to bag
-		// so call onAddToBag prop from parent
+		// so call onAddToBag prop from parent else remove items from cart
 		if (!checked) return onAddToBag();
 		onRemoveFromBag(); 
 	}

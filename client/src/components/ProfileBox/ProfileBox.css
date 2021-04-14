@@ -1,0 +1,21 @@
+.ProfileBox {
+	text-decoration: none;
+	color: var(--light);
+	transition: var(--transition-speed);
+}
+
+.ProfileBox:hover {
+	opacity: 0.7;
+}
+
+.ProfileBox span {
+	display: none;
+}
+
+@media (min-width: 576px) {
+	.ProfileBox span {
+		display: inline-block;
+		margin-left: 0.3rem;
+	}
+}
+

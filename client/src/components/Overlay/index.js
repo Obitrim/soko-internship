@@ -28,7 +28,7 @@ const Index = (props) => {
 	useEffect(() => {
 		window.addEventListener('resize', handleWindowResize);
 		return () => window.removeEventListener('resize', handleWindowResize);
-	},[window.offsetWidth]);
+	},[window]);
 
 	return store.navOpen && <div style={styles} onClick={closeOverlay}></div>
 }

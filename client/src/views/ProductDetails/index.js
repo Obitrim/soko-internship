@@ -43,6 +43,10 @@ const Index = (props) => {
         dispatch({ type: 'REMOVE_FROM_BAG', id });
     }
 
+    function isInBag(){
+        return store.bag.findIndex(product => product.id === id) !== -1;
+    }
+
 	return (
 		<>
 			<div className="ProductDetails__Header">
@@ -74,6 +78,7 @@ const Index = (props) => {
 								<CartButton className="BtnBar__Btn"
 									onAddToBag={addToBag}
 									onRemoveFromBag={removeFromBag}
+									isChecked={isInBag}
 								/>
 								<button type="button" className="BtnBar__Btn">
 									<Favorite/>

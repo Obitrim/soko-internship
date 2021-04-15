@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Login.css';
 
 const Login = ({ onSubmit, ...props }) => {
 	function handleLogin(evt){
@@ -9,12 +10,16 @@ const Login = ({ onSubmit, ...props }) => {
 		onSubmit({ phoneNo: '0544 000 000'});
 	}
   return (
-    <form action="#" className="FromGroup" onSubmit={handleLogin}>
+    <form action="#" className="LoginForm" onSubmit={handleLogin}>
 		<h2>Account Details</h2>
 		<p>To place an order, login in width your 10 digit number</p>
-		<label htmlFor="phoneNo">Mobile Number</label>
-		<input type="text"/>
-		<button type="submit" >Login</button>
+		<div className="LoginForm__Row">
+			<div className="FormGroup">
+				<label htmlFor="phoneNo">Mobile Number</label>
+				<input type="text" placeholder="0544 *** ***"/>
+			</div>
+			<button type="submit" >Login</button>
+		</div>
 	</form>
   )
 }

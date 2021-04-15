@@ -1,7 +1,8 @@
 .CartItem {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	max-width: 270px;
+	text-align: left;
 }
 
 .CartItem:nth-of-type(1),
@@ -46,7 +47,7 @@
 }
 
 .CartItem__Details strong {
-	font-size: calc(var(--font-size) * 1.2);
+	font-size: calc(var(--font-size) * 0.8);
 }
 
 .CartItem__Details__Price {

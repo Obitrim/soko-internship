@@ -31,6 +31,20 @@ const Index = (props) => {
 		return store.bag.length === 0;
 	}
 
+	function generateBagItemsTemplate(items){
+		if (!Array.isArray(items)) return null;
+
+		return items.map((product, index) => (
+			<CartItem 
+				name={product.name} 
+				quantity={product.quantity} 
+				price={product.price} 
+				imgURL={product.imgURL} 
+				key={product.name + index}
+			/>
+		))
+	}
+
 	let stepTemplate = null;
 	switch(currentStep){
 		case 1: stepTemplate = <LoginForm onSubmit={getLoginData}/>;break;
@@ -39,28 +53,15 @@ const Index = (props) => {
 	}
 
 	let bagItemsTemplate = null;
-	if (store.bag.length < 2) {
-		bagItemsTemplate = store.bag.slice(0, 2).map((product, index) => (
-			<CartItem 
-				name={product.name} 
-				quantity={product.quantity} 
-				price={product.price} 
-				imgURL={product.imgURL} 
-				key={product.name + index}
-			/>
-		));
+	if (store.bag.length > 2) {
+		bagItemsTemplate = <>
+			{generateBagItemsTemplate(store.bag.slice(0, 2))}
+			<CollapsibleCard title="See All" style={{ marginTop: '1.5rem '}}>
+				{generateBagItemsTemplate(store.bag.slice(2))}
+			</CollapsibleCard>
+		</>
 	} else {
-		bagItemsTemplate = <CollapsibleCard title="See All" style={{ marginTop: '1.5rem '}}>
-			{store.bag.slice(2).map((product, index) => (
-				<CartItem 
-					name={product.name} 
-					quantity={product.quantity} 
-					price={product.price} 
-					imgURL={product.imgURL} 
-					key={product.name + index}
-				/>
-			))}
-    	</CollapsibleCard>
+		bagItemsTemplate = generateBagItemsTemplate(store.bag.slice(0, 2));
 	}
 
 	return (

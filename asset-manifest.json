@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/soko-internship/client/static/css/main.bbede019.chunk.css",
+    "main.js": "/soko-internship/client/static/js/main.7b40429e.chunk.js",
+    "main.js.map": "/soko-internship/client/static/js/main.7b40429e.chunk.js.map",
+    "runtime-main.js": "/soko-internship/client/static/js/runtime-main.54c38f54.js",
+    "runtime-main.js.map": "/soko-internship/client/static/js/runtime-main.54c38f54.js.map",
+    "static/js/2.47389bb3.chunk.js": "/soko-internship/client/static/js/2.47389bb3.chunk.js",
+    "static/js/2.47389bb3.chunk.js.map": "/soko-internship/client/static/js/2.47389bb3.chunk.js.map",
+    "static/js/3.8cb0df31.chunk.js": "/soko-internship/client/static/js/3.8cb0df31.chunk.js",
+    "static/js/3.8cb0df31.chunk.js.map": "/soko-internship/client/static/js/3.8cb0df31.chunk.js.map",
+    "index.html": "/soko-internship/client/index.html",
+    "static/css/main.bbede019.chunk.css.map": "/soko-internship/client/static/css/main.bbede019.chunk.css.map",
+    "static/js/2.47389bb3.chunk.js.LICENSE.txt": "/soko-internship/client/static/js/2.47389bb3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54c38f54.js",
+    "static/js/2.47389bb3.chunk.js",
+    "static/css/main.bbede019.chunk.css",
+    "static/js/main.7b40429e.chunk.js"
+  ]
+}
